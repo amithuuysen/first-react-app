@@ -1,0 +1,181 @@
+html, body {
+  height: 100vh;
+}
+
+body {
+  background: linear-gradient(to bottom right, #efe3fd, #f9ede8, #efe3fd);
+  position: relative;
+  overflow-y: scroll;
+}
+
+.content {
+  background-color:rgb(239, 245, 245, 0.8);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 85%;
+  height: 85%;
+  border-radius: 10px;
+  transform: translate(-50%, -50%);
+  display: grid;
+  grid-template-areas:
+    'header header exp exp'
+    'navbar profile exp exp'
+    'navbar hire exp exp'
+    'footer footer exp exp';
+  grid-template-columns: 8% 45.5% 45.5% 1%;
+  grid-template-rows: 2% 26% 70% 2%;
+}
+
+.navbar {
+  grid-area: navbar;
+  background-color: #000;
+  border-radius: 10px;
+  width: 70%;
+  height: 100%;
+  align-items: center;
+  align-content: center;
+  margin: auto;
+}
+
+.navbar-icons {
+  width: 100%;
+  height: 100%;
+  color: rgba(255, 255, 255, 0.7);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+  
+.navbar-icon {
+  width: 50px;
+  height: 50px;
+  margin-top: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+}
+
+.active {
+  background-color: rgb(169, 105, 218);
+  color: white;
+}
+.navbar-icon:hover {
+  cursor: pointer;
+  background-color: rgb(169, 105, 218);
+  color: white;
+  transition: 0.1s;
+}
+  
+.navbar-icon i {
+  font-size: 25px;
+}
+
+.navbar-icon i.icon {
+  margin: 0 !important;
+}
+
+.content-profile, .content-exp {
+  background-color: #ffffff;
+  border-radius: 15px;
+  /* box-shadow: 0px 1px 10px 2px #c3c3c3; */
+}
+.content-profile {
+  grid-area: profile;
+  margin: 0px 10px 10px 10px;
+  display: grid;
+  grid-template-areas: 'photo name'
+  'hr hr'
+  'stats stats';
+  grid-template-columns: 15% 85%;
+  grid-template-rows: 54% 2% 44%;
+}
+
+.content-profile:hover {
+}
+
+.content-hire {
+  grid-area: hire;
+}
+
+.content-exp {
+  grid-area: exp;
+}
+
+.profile-photo {
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.profile-photo img{
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  background-color: #ebebeb;
+}
+
+.profile-label {
+  grid-area: name;
+  margin: auto 10px;
+  letter-spacing: 2px;
+}
+
+.label-name {
+  margin-bottom: 10px;
+  font-size: 28px;
+  font-weight: 500;
+}
+
+.label-role {
+  color: gray;
+}
+
+.profile-hr {
+  grid-area: hr;
+  margin: 0 25px;
+}
+
+.profile-stats {
+  grid-area: stats;
+  display: flex;
+  justify-content: space-around;
+}
+
+.stats{
+  width: 30%;
+  height: 100%;
+  display: flex;
+}
+
+.stats-icon {
+  width: 30%;
+  height: 100%;
+  color: #7fa5ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.stats-icon i {
+  font-size: 25px;
+}
+
+.stats-desc {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center ;
+}
+
+.desc-header {
+  font-size: large;
+  font-weight: 500;
+}
+.desc-footer {
+  margin-top: 5px;
+  color: gray;
+}
