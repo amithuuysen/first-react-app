@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "./App.css";
 import face from "./image-face.png";
+import StepperBar from "./StepperBar.js";
 
 var navList = [
     { id: 1, icon: "home icon", active: 1 },
@@ -11,22 +12,22 @@ var statsList = [
     {
         id: 1,
         icon: "angle double up icon",
-        header: "1.5",
+        header: "1.8",
         footer: "Years of Experience",
         color: "#cb9de3",
     },
     {
         id: 2,
-        icon: "mail icon",
-        header: "Contact",
-        footer: "amithuuysen@gmail.com",
+        icon: "code icon",
+        header: "500 + / Day",
+        footer: "Avg. Lines of Code",
         color: "#4dd75b",
     },
     {
         id: 3,
-        icon: "linkedin icon",
-        header: "2",
-        footer: "Languages Known",
+        icon: "desktop icon",
+        header: "10 +",
+        footer: "Successful Projects",
         color: "#7fa5ff",
     },
 ];
@@ -97,7 +98,9 @@ function App() {
                 <ReturnProfileStats />
             </div>
             <div className="content-hire"></div>
-            <div className="content-exp"></div>
+            <div className="content-exp">
+                <StepperBar />
+            </div>
         </div>
     );
 }
