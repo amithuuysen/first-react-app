@@ -2,7 +2,6 @@ html,
 body {
     height: 100vh;
 }
-
 body {
     background: linear-gradient(to bottom right, #efe3fd, #f9ede8, #efe3fd);
     position: relative;
@@ -213,11 +212,43 @@ header {
     color: rgb(144, 89, 186);
     font-size: 2.2em !important;
 }
-
+.MuiStepContent-root,
 .MuiStepConnector-root {
     margin-left: 15px !important;
 }
-
+.MuiStepConnector-vertical {
+    display: none;
+}
+.MuiStepContent-root,
 .MuiStepConnector-line {
     border-color: rgb(144, 89, 186) !important;
+}
+
+.MuiTypography-root,
+.stepper-company,
+.stepper-role {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+        "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+        "Helvetica Neue", sans-serif !important;
+}
+
+.stepper-company {
+    font-size: large;
+    font-weight: bolder;
+}
+.stepper-role {
+    font-size: 14px;
+    color: gray;
+    padding-left: 10px;
+}
+
+.stepper-dl {
+    letter-spacing: 1px;
+}
+
+.stepper-dl dd {
+    padding-bottom: 10px;
+}
+.dl-header {
+    font-weight: bold;
 }
