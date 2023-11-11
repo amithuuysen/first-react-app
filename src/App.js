@@ -4,8 +4,8 @@ import face from "./image-face.png";
 import StepperBar from "./StepperBar.js";
 
 var navList = [
-    { id: 1, icon: "home icon", active: 1 },
-    { id: 2, icon: "info circle icon", active: 0 },
+    { id: 1, icon: "home icon", active: true },
+    { id: 2, icon: "info circle icon", active: false },
 ];
 
 var statsList = [
@@ -36,7 +36,7 @@ function App() {
 
     const changeActive = (id) => {
         iconJson.map((Obj) =>
-            Obj.id === id ? (Obj.active = 1) : (Obj.active = 0)
+            Obj.id === id ? (Obj.active = true) : (Obj.active = false)
         );
         updateActive([...iconJson]);
     };
@@ -44,6 +44,9 @@ function App() {
     const ReturnNavs = () => {
         return (
             <div className="navbar-icons">
+                <div className="cons">
+                    <i class="american sign language interpreting icon"></i>
+                </div>
                 {iconJson.map((iconObj) => (
                     <div
                         className={
@@ -64,8 +67,8 @@ function App() {
     const ReturnProfileStats = () => {
         return (
             <div className="profile-stats">
-                {statsList.map((Obj) => (
-                    <div className="stats">
+                {statsList.map((Obj, i) => (
+                    <div className="stats" key={i + 1}>
                         <div
                             className="stats-icon"
                             style={{ color: Obj.color }}

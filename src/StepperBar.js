@@ -8,7 +8,7 @@ const StepperBar = () => {
     const stepperProps = [
         {
             Company: "Zoho Corporation",
-            Role: "Full-Stack Web Developer",
+            Role: "< Full-Stack Web Developer >",
             Content: {
                 "Web Application": [
                     "Designed, developed, and maintained web applications using a comprehensive tech stack that included React, Node.js, and Java.",
@@ -31,31 +31,34 @@ const StepperBar = () => {
         },
         {
             Company: "Infosys Limited",
-            Role: "Systems Engineer",
-            Content: { "": [""] },
+            Role: "< Systems Engineer >",
+            Content: undefined,
             Icon: AssignmentTurnedInIcon,
         },
     ];
     return (
         <Stepper orientation="vertical">
-            {stepperProps.map((props) => (
-                <Step>
+            {stepperProps.map((props, i) => (
+                <Step key={i + 1}>
                     <StepLabel StepIconComponent={props.Icon}>
                         <span className="stepper-company">{props.Company}</span>
                         <span className="stepper-role">{props.Role}</span>
                     </StepLabel>
                     <StepContent>
                         <Typography>
-                            {Object.keys(props.Content).map((key, i) => (
-                                <dl className="stepper-dl">
-                                    <dt className="dl-header">{key}</dt>
-                                    <dd>
-                                        {props.Content[key].map((item) => (
-                                            <li>{item}</li>
-                                        ))}
-                                    </dd>
-                                </dl>
-                            ))}
+                            {props.Content &&
+                                Object.keys(props.Content).map((key, i) => (
+                                    <dl className="stepper-dl" key={i + 1}>
+                                        <dt className="dl-header">{key}</dt>
+                                        <dd>
+                                            {props.Content[key].map(
+                                                (item, i) => (
+                                                    <li key={i + 1}>{item}</li>
+                                                )
+                                            )}
+                                        </dd>
+                                    </dl>
+                                ))}
                         </Typography>
                     </StepContent>
                 </Step>
